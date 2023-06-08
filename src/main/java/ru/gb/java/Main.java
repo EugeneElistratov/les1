@@ -1,19 +1,21 @@
-package ru.gb.java;
+class Solution {
+    public String reverseWords(String s) {
+        String result = new String();
+        int i = 0;
+        int n = s.length();
 
-// Press Shift twice to open the Search Everywhere dialog and type `show whitespaces`,
-// then press Enter. You can now see whitespace characters in your code.
-public class Main {
-    public static void main(String[] args) {
-        // Press Alt+Enter with your caret at the highlighted text to see how
-        // IntelliJ IDEA suggests fixing it.
-        System.out.printf("Hello and welcome!");
-
-        // Press Shift+F10 or click the green arrow button in the gutter to run the code.
-        for (int i = 1; i <= 5; i++) {
-
-            // Press Shift+F9 to start debugging your code. We have set one breakpoint
-            // for you, but you can always add more by pressing Ctrl+F8.
-            System.out.println("i = " + i);
+        while(i < n){
+            while(i < n && s.charAt(i) == ' ') i++;
+            if(i >= n) break;
+            int j = i + 1;
+            while(j < n && s.charAt(j) != ' ') j++;
+            String sub = s.substring(i, j);
+            if (result.length() == 0) result = sub;
+            else result = sub + " " + result;
+            i = j + 1;
         }
+        return result;
     }
 }
+// "the sky is blue"
+// "blue is sky the"
