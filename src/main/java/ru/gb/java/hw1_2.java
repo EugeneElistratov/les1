@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
  
-class Hw1_2 {
+class hw1_2 {
     private static Integer[] append(Integer[] arr, int element)
     {
         List<Integer> list = new ArrayList<>(Arrays.asList(arr));
